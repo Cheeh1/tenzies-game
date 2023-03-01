@@ -1,33 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Dice from './Dice'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+  <>
+    <main className='game-container'>
+     <div className='game-header'>
+        <h1 className='game-title'>Tenzies</h1>
+        <p className='game-text'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+     </div>
+
+      <Dice />
+      
+      <button className='game-button'>Roll</button>
+    </main>
+  </>
   )
 }
 

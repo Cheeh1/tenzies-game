@@ -1,42 +1,93 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #000;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #ffff;
+  /* padding: 50px 20px 50px 20px;
+  margin: 150px 400px;  Bad for responsiveness*/
+  height: 450px;
+  width: 40vw;    /* Good for responsiveness */
+  margin: 150px auto;
+  border-radius: 10px;
+}
+
+.game-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+.game-title {
+  color: #2B283A;
+  font-weight: 700;
+  font-size: 5.0rem;
+  line-height: 30px;
   text-align: center;
+  letter-spacing: -0.03em;
+  font-family: Karla;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.game-text {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #4A4E74;
+  width: 30vw;
+  margin: auto;
+  font-family: Inter;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-dice {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Five columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows */
+  grid-gap: 20px; /* spaces between boxes */
+  /* justify-content: center; Center horizontally */
+  /* align-items: center; Center vertically */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.die {
+  background: #59E391;
+  box-shadow: 2px 10px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 10px 5px;
+  color: #2B283A;
+  cursor: pointer;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.game-button {
+  display: flex;
+  align-content: center;
+  padding: 10px 30px;
+  font-family: Karla;
+  background-color: #5035FF;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  color: #ffff;
+  font-weight: 600;
+  font-size: 2.0rem;
+  margin: auto;
+  cursor: pointer;
 }
