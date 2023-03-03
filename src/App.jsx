@@ -4,7 +4,7 @@ import Die from './Die'
 
 const App = () => {
 
- const [dice, setdice] = useState(allNewDice())
+ const [dice, setDice] = useState(allNewDice())
 
   function allNewDice() {
     const newDice = []
@@ -12,6 +12,10 @@ const App = () => {
         newDice.push(Math.ceil(Math.random() * 6))
     }
     return newDice
+  }
+
+  function rollDice() {
+    setDice(allNewDice())
   }
 
   const diceElements = dice.map((die, index) => <Die key={index} value={die} />)
@@ -28,7 +32,7 @@ const App = () => {
           {diceElements}
         </div>
 
-        <button className='game-button'>Roll</button>
+        <button onClick={rollDice} className='game-button'>Roll</button>
       </main>
     </>
   )
