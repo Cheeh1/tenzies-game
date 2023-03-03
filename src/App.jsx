@@ -1,21 +1,36 @@
+import React, { useState, UseState } from "react"
 import './App.css'
-import Dice from './Dice'
+import Die from './Die'
 
 const App = () => {
 
-  return (
-  <>
-    <main className='game-container'>
-     <div className='game-header'>
-        <h1 className='game-title'>Tenzies</h1>
-        <p className='game-text'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-     </div>
+ const [dice, setdice] = useState(allNewDice())
 
-      <Dice />
-      
-      <button className='game-button'>Roll</button>
-    </main>
-  </>
+  function allNewDice() {
+    const newDice = []
+    for (let i=0; i < 10; i++) {
+        newDice.push(Math.ceil(Math.random() * 6))
+    }
+    return newDice
+  }
+
+  const diceElements = dice.map((die, index) => <Die key={index} value={die} />)
+
+  return (
+    <>
+      <main className='game-container'>
+        <div className='game-header'>
+          <h1 className='game-title'>Tenzies</h1>
+          <p className='game-text'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        </div>
+
+        <div className="game-dice">
+          {diceElements}
+        </div>
+
+        <button className='game-button'>Roll</button>
+      </main>
+    </>
   )
 }
 
